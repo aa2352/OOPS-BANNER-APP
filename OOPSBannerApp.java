@@ -2,20 +2,56 @@
  * @author Akshay
  * @version 2
  */
-public class OOPSBannerApp {
+/**
+ * OOPSBannerApp UC6 – OOPS Banner Application (Use Case 6)
+ * Refactored using Static Helper Methods
+ */
 
-    public static void main(String[] args) {
-    String[] bannerLines = {
-            String.join(" ", "   ***", "   ***", " ******", "  ***** "),
-            String.join(" ", " ** **", " ** **", " ** ** ", " ** ** "),
-            String.join(" ", " ** **", " ** **", " ** ** ", " ** "),
-            String.join(" ", " ** **", " ** **", " ******", "  ***** "),
-            String.join(" ", " ** **", " ** **", " ** ", "      **"),
-            String.join(" ", " ** **", " ** **", " ** ", " ** ** "),
-            String.join(" ", "   ***", "   ***", " ** ", "  ***** ")
+public class OOPSBannerApp {
+    public static String[] getOPattern() {
+        return new String[] {
+                "  *****  ",
+                " **   ** ",
+                "**     **",
+                "**     **",
+                "**     **",
+                " **   ** ",
+                "  *****  "
         };
-        for (String line : bannerLines) {
-            System.out.println(line);
+    }
+
+    public static String[] getPPattern() {
+        return new String[] {
+                " ******  ",
+                " **   ** ",
+                " **   ** ",
+                " ******  ",
+                " **      ",
+                " **      ",
+                " **      "
+        };
+    }
+    public static String[] getSPattern() {
+        return new String[] {
+                "  ****** ",
+                " **      ",
+                " **      ",
+                "  *****  ",
+                "      ** ",
+                "      ** ",
+                " ******  "
+        };
+    }
+    public static void main(String[] args) {
+        String[] oPattern1 = getOPattern();
+        String[] oPattern2 = getOPattern();
+        String[] pPattern = getPPattern();
+        String[] sPattern = getSPattern();
+        for (int i = 0; i < oPattern1.length; i++) {
+            System.out.println(oPattern1[i] + " "
+                    + oPattern2[i] + " "
+                    + pPattern[i] + " "
+                    + sPattern[i]);
         }
     }
 }
